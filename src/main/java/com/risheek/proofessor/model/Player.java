@@ -4,15 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Player {
-	long id;
+	String id;
+	String accountId;
+	String puuid;
 	String name;
 	int level;
 	String image;
+	Tier tier;
 	Rank rank;
-	int lp;
-	List<Champion> championPool = new ArrayList<Champion>();
+	int leaguePoints;
 	List<String> comments = new ArrayList<String>();
-	Role primaryRole;
 	
 	
 	public Player() {
@@ -20,28 +21,48 @@ public class Player {
 	}
 
 
-	public Player(long id, String name, int level, String image, Rank rank, int lp, List<Champion> championPool,
-			List<String> comments, Role primaryRole) {
+	public Player(String id, String accountId, String puuid, String name, int level, String image, Rank rank, int leaguePoints,
+			List<String> comments) {
 		super();
 		this.id = id;
+		this.accountId = accountId;
+		this.puuid = puuid;
 		this.name = name;
 		this.level = level;
 		this.image = image;
 		this.rank = rank;
-		this.lp = lp;
-		this.championPool = championPool;
+		this.leaguePoints = leaguePoints;
 		this.comments = comments;
-		this.primaryRole = primaryRole;
 	}
 
 
-	public long getId() {
+	public String getId() {
 		return id;
 	}
 
 
-	public void setId(long id) {
+	public void setId(String id) {
 		this.id = id;
+	}
+	
+
+	public String getAccountId() {
+		return accountId;
+	}
+
+
+	public void setAccountId(String accountId) {
+		this.accountId = accountId;
+	}
+
+
+	public String getPuuid() {
+		return puuid;
+	}
+
+
+	public void setPuuid(String puuid) {
+		this.puuid = puuid;
 	}
 
 
@@ -78,30 +99,31 @@ public class Player {
 	public Rank getRank() {
 		return rank;
 	}
+	
+	
+
+	public Tier getTier() {
+		return tier;
+	}
+
+
+	public void setTier(Tier tier) {
+		this.tier = tier;
+	}
+
+
+	public int getLeaguePoints() {
+		return leaguePoints;
+	}
+
+
+	public void setLeaguePoints(int leaguePoints) {
+		this.leaguePoints = leaguePoints;
+	}
 
 
 	public void setRank(Rank rank) {
 		this.rank = rank;
-	}
-
-
-	public int getLp() {
-		return lp;
-	}
-
-
-	public void setLp(int lp) {
-		this.lp = lp;
-	}
-
-
-	public List<Champion> getChampionPool() {
-		return championPool;
-	}
-
-
-	public void setChampionPool(List<Champion> championPool) {
-		this.championPool = championPool;
 	}
 
 
@@ -113,17 +135,6 @@ public class Player {
 	public void setComments(List<String> comments) {
 		this.comments = comments;
 	}
-
-
-	public Role getPrimaryRole() {
-		return primaryRole;
-	}
-
-
-	public void setPrimaryRole(Role primaryRole) {
-		this.primaryRole = primaryRole;
-	}
-	
 	
 	
 }

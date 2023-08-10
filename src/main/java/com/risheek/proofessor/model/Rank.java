@@ -1,35 +1,28 @@
 package com.risheek.proofessor.model;
 
 public enum Rank {
-	IRON4,
-	IRON3,
-	IRON2,
-	IRON1,
-	BRONZE4,
-	BRONZE3,
-	BRONZE2,
-	BRONZE1,
-	SILVER4,
-	SILVER3,
-	SILVER2,
-	SILVER1,
-	GOLD4,
-	GOLD3,
-	GOLD2,
-	GOLD1,
-	PLATINUM4,
-	PLATINUM3,
-	PLATINUM2,
-	PLATINUM1,
-	EMERALD4,
-	EMERALD3,
-	EMERALD2,
-	EMERALD1,
-	DIAMOND4,
-	DIAMOND3,
-	DIAMOND2,
-	DIAMOND1,
-	MASTER,
-	GRANDMASTER,
-	CHALLENGER
+	I,
+	II,
+	III,
+	IV;
+	
+	public static void assignRank(Player player, String tier) {
+		switch(tier) {
+			case "IV":
+				player.setRank(Rank.IV);
+				break;
+			case "III":
+				player.setRank(Rank.III);
+				break;
+			case "II":
+				player.setRank(Rank.II);
+				break;
+			case "I":
+				player.setRank(Rank.I);
+				break;
+			default:
+				player.setRank(Rank.IV);
+		}
+		
+	}
 }
